@@ -9,7 +9,8 @@
     "next-optimized-images": "^1.4.1",
     "nextein": "^2.0.0",
     "react": "^16.6.0",
-    "react-dom": "^16.6.0"
+    "react-dom": "^16.6.0",
+    "react-spring": "^6.1.8"
   },
   "scripts": {
     "dev": "nextein",
