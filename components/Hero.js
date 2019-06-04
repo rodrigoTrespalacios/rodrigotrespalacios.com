@@ -9,16 +9,17 @@ function Hero(props) {
       <div
         className="profile-pic"
         style={{
-          backgroundImage: `url('/static/images/profile.jpg?inline')`
+          backgroundImage: `url('/static/images/logo.png?inline')`
         }}
       />
       <h3 className="blog-title">
         <Link prefetch href="/">
           <a className="white no-underline" href="/">
-            <span>Rodrigo Trespalacios</span>
+            <h2>Rodrigo Trespalacios</h2>
           </a>
         </Link>
-        <div style={{fontWeight: 400, display: 'flex', justifyContent: 'center', marginTop: 10}} className="gray"><Social /></div>
+        <hr />
+        {false && <div style={{fontWeight: 400, display: 'flex', justifyContent: 'center', marginTop: 10}} className="gray"><Social /></div>}
       </h3>
     </div>
   )

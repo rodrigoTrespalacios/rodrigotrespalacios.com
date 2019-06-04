@@ -5,10 +5,12 @@ import Head from 'next/head'
 import PostPreview from '../components/PostPreview'
 import Hero from '../components/Hero'
 import Header from '../components/Header'
+import Footer from '../components/Footer'
 import { Spring, config, Transition } from 'react-spring'
 
 export default withPosts( ({ posts }) => {
-  const sliced = posts.sort(sortByDate).slice(0, 1)
+  const sliced = posts.sort(sortByDate)
+
   return (
     <main>
       <Header
@@ -25,17 +27,19 @@ export default withPosts( ({ posts }) => {
         </Spring>
       <section className="post-list">
         <Transition
-          items={sliced} keys={sliced => sliced.key}
+          items={sliced} keys={sliced => sliced.data._entry}
+          trail={0}
           from={{ transform: 'translate3d(0,-40px,0)', opacity: 0 }}
           enter={{ transform: 'translate3d(0,0px,0)', opacity: 1 }}
           leave={{ transform: 'translate3d(0,-40px,0)', opacity: 0  }}>
           {post => props =>
-            <div style={props}><PostPreview
+            <div style={{...props, marginBottom: 10}}><PostPreview
               {...post.data}
             /></div>
           }
         </Transition>
       </section>
+      <Footer />
     </main>
   )
 })

@@ -18,7 +18,7 @@ export default withPost(({ post }) => (
         description={post.data.title}
       />
       <Link prefetch href="/">
-        <a href="/">← Back to Posts</a>
+        <a href="/">« Back to Posts</a>
       </Link>
       <header>
         <h1>{post.data.title}</h1>
@@ -28,7 +28,7 @@ export default withPost(({ post }) => (
       </section>
       <hr style={{marginBottom: 10}}/>
       <Link prefetch href="/">
-        <a href="/">← Back to Posts</a>
+        <a href="/">« Back to Posts</a>
       </Link>
       <Footer />
     </main>

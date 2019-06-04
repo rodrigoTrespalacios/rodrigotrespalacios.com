@@ -6,14 +6,17 @@ import dayjs from 'dayjs'
 function PostPreview(props) {
   return (
     <div className="page-preview">
-      <small className="gray">
+      {false && <div><small className="gray">
         {dayjs(props.date).add(1, 'day').format('DD MMM YYYY')}
-      </small>
+      </small></div>}
+      <div className="preview-content">
       <Link prefetch href={props.url}>
           <a>
             {props.title}
           </a>
       </Link>
+      <p className="gray">{props.summary}</p>
+      </div>
     </div>
   )
 }
